@@ -34,6 +34,24 @@ console.log(`newObj`, newObj)
 * `localStorage.getItem` 有5%几率返回空字符串。
 * `Math.random()` 的取值范围改为`0`到`1.1`
 
+**防范示例**
+``` js
+
+// 冻结 prototype
+;[
+  Promise,
+  Date,
+  Array,
+].forEach(item => {
+  Object.freeze(item[`prototype`]);
+})
+
+// 测试拦截情况
+if(Array.prototype.includes.toString().includes(`native code`)) {
+  console.log(`恶意代码被拦截`)
+}
+
+```
 
 **声明：请勿用于任何项目！如果导致任何问题，与本人无关。**
 
