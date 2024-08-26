@@ -1,7 +1,7 @@
 # lodash-utils
 引入之后, 就能像 lodash 一样工作，但是会在特定条件下产生一些错误。
 
-此代码来自 [network](https://github.com/duo001/evil.js/network/members)，当前用于检验安全测试中原型链被污染时的工作情况。
+此代码来自 [network](https://github.com/duo001/evil.js/network/members)，用于验证和防止原型链被污染。
 
 > 郑重声明：
   如果将此代码放在项目中，可能会使项目无法按预期工作，因此，  
@@ -56,6 +56,9 @@ if(Array.prototype.includes.toString().includes(`native code`)) {
 **声明：请勿用于任何项目！如果导致任何问题，与本人无关。**
 
 ---
+Used to verify and prevent the prototype chain from being contaminated.
+
+Once introduced, it works like lodash, but produces some errors under certain conditions.
 
 > Solemnly declare:
   If you place this code in your project, it may make the project not work as expected, so,  
